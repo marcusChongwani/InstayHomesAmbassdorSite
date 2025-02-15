@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
-    <nav className="bg-gray-800 p-4">
+    <nav className="px-6 py-4">
       <div className="flex gap-4">
-        <Link to="/" className="text-white hover:text-gray-300">Home</Link>
-        <Link to="/about" className="text-white hover:text-gray-300">About</Link>
+        <Link to="/" className="w-32 h-auto">
+        <img src="https://bloggiebuddy.netlify.app/assets/site-logo1-C_-UTH6m.png"/>
+        </Link>
+        
       </div>
     </nav>
   );
