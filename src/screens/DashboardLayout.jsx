@@ -17,20 +17,16 @@ const DashboardLayout = () => {
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -50 }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
-    >
+ 
       <div className="p-8">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-3xl font-bold text-gray-700 mb-4">My Submissions </h1>
           <div>
             <nav >
               <ul className="flex items-center gap-4 font-bold text-lg text-gray-300">
-                <li className="px-2"><NavLink to="overview" className={({ isActive }) => isActive ? "text-red-500 font-bold" : "text-gray-300"}>Overview</NavLink></li>
-                <li className="px-2"><NavLink to="settings" className={({ isActive }) => isActive ? "text-red-500 font-bold" : "text-gray-300"}>Settings</NavLink></li>
+                <li className="px-2"><NavLink to="" 
+  end className={({ isActive }) => isActive ? "text-red-500 font-bold" : "text-gray-300"}>Overview</NavLink></li>
+                <li className="px-2"><NavLink to="/dashboard/settings" className={({ isActive }) => isActive ? "text-red-500 font-bold" : "text-gray-300"}>Settings</NavLink></li>
               </ul>
             </nav>
             <div>
@@ -40,7 +36,7 @@ const DashboardLayout = () => {
         
         </div>
       </div>
-    </motion.div>
+    
   );
 };
 
