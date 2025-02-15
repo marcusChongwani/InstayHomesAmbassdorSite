@@ -7,6 +7,9 @@ import Home from "./screens/Home";
 import About from "./screens/About";
 import SignUpForm from "./Authentication/SignUpForm";
 import LogInForm from "./Authentication/LogInForm";
+import DashboardLayout from "./screens/DashboardLayout";
+import Overview from "./screens/DashboardScreens/Overview"
+import Settings from "./screens/DashboardScreens/Settings";
 
 export default function App() {
   return (
@@ -30,6 +33,13 @@ const AnimatedRoutes = () => {
         <Route path="/about" element={<About />} />
         <Route path="/signup" element={<SignUpForm/>} />
         <Route path="/login" element={<LogInForm/>} />
+
+        
+        <Route path="dashboard/*" element={<DashboardLayout />}>
+          <Route path="overview" element={<Overview />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+        
       </Routes>
     </AnimatePresence>
   );
