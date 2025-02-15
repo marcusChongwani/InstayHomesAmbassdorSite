@@ -1,11 +1,18 @@
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
+import Navbar from './Components/Navbar'
+import Home from './screens/Home'
+import About from './screens/About'
 
 export default function App() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-2xl font-bold text-blue-600">
-        React ⚛️ + Vite ⚡ + Replit
-      </div>
-    </main>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
