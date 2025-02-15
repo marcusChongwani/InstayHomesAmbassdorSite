@@ -78,6 +78,10 @@ function SignUpForm() {
             
           </select>
           </div>
+          <div class="flex items-center mb-4">
+              <input checked id="checkbox-1" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/ >
+              <label for="checkbox-1" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-500">I agree to the <a href="#" class="text-red-600 hover:underline ">terms and conditions</a>.</label>
+          </div>
           <div className="mt-6">
             <button type="button" class="relative inline-block text-lg group w-full">
                 <span class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white w-full">

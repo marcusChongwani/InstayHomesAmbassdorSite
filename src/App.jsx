@@ -9,7 +9,9 @@ import SignUpForm from "./Authentication/SignUpForm";
 import LogInForm from "./Authentication/LogInForm";
 import DashboardLayout from "./screens/DashboardLayout";
 import Overview from "./screens/DashboardScreens/Overview"
-import Settings from "./screens/DashboardScreens/Settings";
+import Pending from "./screens/DashboardScreens/Pending";
+import Verified from "./screens/DashboardScreens/Verified";
+import Create from "./screens/DashboardScreens/Create";
 
 export default function App() {
   return (
@@ -37,7 +39,10 @@ const AnimatedRoutes = () => {
         
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<Overview />} />
-          <Route path="settings" element={<Settings />} />
+          <Route path="pending" element={<Pending />} />
+          <Route path="verified" element={<Verified />} />
+          <Route path="create" element={<Create />} />
+          
         </Route>
         
       </Routes>
