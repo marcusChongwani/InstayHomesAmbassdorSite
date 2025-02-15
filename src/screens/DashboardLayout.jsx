@@ -29,8 +29,8 @@ const DashboardLayout = () => {
           <div>
             <nav >
               <ul className="flex items-center gap-4 font-bold text-lg text-gray-300">
-                <li className="px-2"><NavLink to="overview" className={({ isActive }) => (isActive ? "text-red-200" : "text-gray-300")}>Active</NavLink></li>
-                <li className="px-2"><NavLink to="settings" className={({ isActive }) => (isActive ? "text-red-200" : "text-gray-300")}>Previous</NavLink></li>
+                <li className="px-2"><NavLink to="overview" className={({ isActive }) => isActive ? "text-red-500 font-bold" : "text-gray-300"}>Overview</NavLink></li>
+                <li className="px-2"><NavLink to="settings" className={({ isActive }) => isActive ? "text-red-500 font-bold" : "text-gray-300"}>Settings</NavLink></li>
               </ul>
             </nav>
             <div>
