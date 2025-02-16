@@ -1,18 +1,19 @@
 import React from 'react';
 import {Link} from 'react-router-dom';;
-
-
 import EarningsChart from '../../Components/EarningsChat';
+import BoardingHouseWidget from '../../Components/Widget';
+
 
 export default function Overview(){
 
 
-  const earningsData = [20, 30, 60, 50, 20, 40, 30, 70, 20, 50, 30, 40];
-  const totalEarnings = 27956;
-  const growthRate = 31;
+  const earningsData = [0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0];
+  const totalEarnings = 0.00;
+  const growthRate = 0;
   
   return (
     <div>
+    
       <div className="flex items-center justify-center mb-2 border border-gray-100 rounded-md">
         <EarningsChart earnings={earningsData} total={totalEarnings} growth={growthRate} />
       </div>
@@ -34,6 +35,9 @@ export default function Overview(){
          </div>
        </div>
      </div>
+      <div className="flex flex-col items-center justify-center text-center ">
+        <BoardingHouseWidget/>
+      </div>
     </div>
   );
 }

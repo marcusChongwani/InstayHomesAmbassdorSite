@@ -1,13 +1,37 @@
-import React, { useEffect } from "react";
-import { Outlet, NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Outlet, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MdDashboard, MdPendingActions, MdOutlineVerifiedUser } from "react-icons/md";
 import { IoCreateOutline } from "react-icons/io5";
 
+const navItems = [
+  { path: "/dashboard", label: "Overview", icon: <MdDashboard />, exact: true },
+  { path: "/dashboard/pending", label: "Pending", icon: <MdPendingActions /> },
+  { path: "/dashboard/verified", label: "Verified", icon: <MdOutlineVerifiedUser /> },
+  { path: "/dashboard/create", label: "Create", icon: <IoCreateOutline /> },
+];
+
 const DashboardLayout = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [activeIndex, setActiveIndex] = useState(0);
+
   useEffect(() => {
-    // Fetch data if necessary
-  }, []);
+    // Set active index based on current location
+    const index = navItems.findIndex((item) => item.path === location.pathname);
+    if (index !== -1) setActiveIndex(index);
+  }, [location.pathname]);
+
+  const handleSwipe = (event, info) => {
+    const swipeThreshold = 100; // Min distance to trigger swipe
+    if (info.offset.x < -swipeThreshold && activeIndex < navItems.length - 1) {
+      // Swiped left (next page)
+      navigate(navItems[activeIndex + 1].path);
+    } else if (info.offset.x > swipeThreshold && activeIndex > 0) {
+      // Swiped right (previous page)
+      navigate(navItems[activeIndex - 1].path);
+    }
+  };
 
   const linkClasses = (isActive) =>
     `pb-2 flex items-center gap-2 border-b-2 ${
@@ -27,24 +51,29 @@ const DashboardLayout = () => {
           <nav className="mb-8">
             <div className="overflow-x-auto whitespace-nowrap">
               <div className="flex items-center gap-4 text-md text-gray-300">
-                <NavLink to="/dashboard" end className={({ isActive }) => linkClasses(isActive)}>
-                  <MdDashboard /> Overview
-                </NavLink>
-                <NavLink to="/dashboard/pending" className={({ isActive }) => linkClasses(isActive)}>
-                  <MdPendingActions /> Pending
-                </NavLink>
-                <NavLink to="/dashboard/verified" className={({ isActive }) => linkClasses(isActive)}>
-                  <MdOutlineVerifiedUser /> Verified
-                </NavLink>
-                <NavLink to="/dashboard/create" className={({ isActive }) => linkClasses(isActive)}>
-                  <IoCreateOutline /> Create
-                </NavLink>
+                {navItems.map((item) => (
+                  <NavLink
+                    key={item.path}
+                    to={item.path}
+                    end={item.exact || undefined}
+                    className={({ isActive }) => linkClasses(isActive)}
+                  >
+                    {item.icon} {item.label}
+                  </NavLink>
+                ))}
               </div>
             </div>
           </nav>
-          <div>
+
+          {/* Swipe-enabled Outlet */}
+          <motion.div
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            onDragEnd={handleSwipe}
+            className="overflow-hidden"
+          >
             <Outlet />
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.div>
