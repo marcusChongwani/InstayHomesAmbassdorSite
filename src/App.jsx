@@ -5,22 +5,20 @@ import SignUpForm from "./Authentication/SignUpForm";
 import LogInForm from "./Authentication/LogInForm";
 import "./App.css";
 
-
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Main section - this will be the root route */}
-        <Route path="/" element={<MainRoutes />} />
+        {/* Main section - change path to "*" to handle nested routes properly */}
+        <Route path="*" element={<MainRoutes />} />
 
         {/* Ambassador section */}
         <Route path="/ambassador/*" element={<AmbassadorRoutes />} />
+
+        {/* Global Routes */}
+        <Route path="/signup" element={<SignUpForm />} />
+        <Route path="/login" element={<LogInForm />} />
       </Routes>
-
-      {/* Global Routes */}
-      <Route path="/signup" element={<SignUpForm />} />
-      <Route path="/login" element={<LogInForm />} />
-
     </Router>
   );
 }

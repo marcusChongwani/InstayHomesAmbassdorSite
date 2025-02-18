@@ -4,9 +4,7 @@ import MainLayout from "../Layouts/MainLayout";
 function MainRoutes() {
   return (
     <MainLayout>
-      <Routes>
-        
-      </Routes>
+      <Routes></Routes>
     </MainLayout>
   );
 }

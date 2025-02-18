@@ -4,21 +4,26 @@ const EarningsChart = ({ earnings, total, growth }) => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
       {/* Total Earnings */}
-<div className="flex items-center justify-between">
-      <div>
-      <h2 className="text-gray-500 text-sm">Total earnings</h2>
-      <div className="flex items-center space-x-2">
-        <p className="text-2xl font-bold text-gray-700">K{total.toLocaleString()}</p>
-        <span className="text-green-500 text-sm font-semibold">{growth}% ↑</span>
-      </div>
-      </div>
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-gray-500 text-sm">Total earnings</h2>
+          <div className="flex items-center space-x-2">
+            <p className="text-2xl font-bold text-gray-700">
+              K{total.toLocaleString()}
+            </p>
+            <span className="text-green-500 text-sm font-semibold">
+              {growth}% ↑
+            </span>
+          </div>
+        </div>
 
-      <div className="">
-      <h2 className="text-gray-500 text-sm">Pending earnings</h2>
-        <p className="text-2xl font-bold text-gray-300">K{total.toLocaleString()}</p>
-      
+        <div>
+          <h2 className="text-gray-500 text-sm">Pending earnings</h2>
+          <p className="text-2xl font-bold text-gray-300">
+            K{total.toLocaleString()}
+          </p>
+        </div>
       </div>
-</div>
       {/* Bar Chart */}
       <div className="flex justify-between mt-4">
         {earnings.map((value, index) => (
@@ -34,7 +39,22 @@ const EarningsChart = ({ earnings, total, growth }) => {
               ></div>
             </div>
             <p className="text-xs text-gray-500 mt-1">
-              {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][index]}
+              {
+                [
+                  "Jan",
+                  "Feb",
+                  "Mar",
+                  "Apr",
+                  "May",
+                  "Jun",
+                  "Jul",
+                  "Aug",
+                  "Sep",
+                  "Oct",
+                  "Nov",
+                  "Dec",
+                ][index]
+              }
             </p>
           </div>
         ))}

@@ -5,10 +5,10 @@ import { MdDashboard, MdPendingActions, MdOutlineVerifiedUser } from "react-icon
 import { IoCreateOutline } from "react-icons/io5";
 
 const navItems = [
-  { path: "/dashboard", label: "Overview", icon: <MdDashboard />, exact: true },
-  { path: "/dashboard/pending", label: "Pending", icon: <MdPendingActions /> },
-  { path: "/dashboard/verified", label: "Verified", icon: <MdOutlineVerifiedUser /> },
-  { path: "/dashboard/create", label: "Create", icon: <IoCreateOutline /> },
+  { path: "/ambassador/dashboard", label: "Overview", icon: <MdDashboard />, exact: true },
+  { path: "/ambassador/dashboard/pending", label: "Pending", icon: <MdPendingActions /> },
+  { path: "/ambassador/dashboard/verified", label: "Verified", icon: <MdOutlineVerifiedUser /> },
+  { path: "/ambassador/dashboard/create", label: "Create", icon: <IoCreateOutline /> },
 ];
 
 const DashboardLayout = () => {

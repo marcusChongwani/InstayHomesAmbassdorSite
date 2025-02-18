@@ -5,7 +5,7 @@ import Navbar from "../Sections/Ambassador/Components/Navbar";
 import Home from "../Sections/Ambassador/screens/Home";
 import About from "../Sections/Ambassador/screens/About";
 import DashboardLayout from "../Sections/Ambassador/screens/DashboardLayout";
-import Overview from "../Sections/Ambassador/screens/DashboardScreens/Overview"
+import Overview from "../Sections/Ambassador/screens/DashboardScreens/Overview";
 import Pending from "../Sections/Ambassador/screens/DashboardScreens/Pending";
 import Verified from "../Sections/Ambassador/screens/DashboardScreens/Verified";
 import Create from "../Sections/Ambassador/screens/DashboardScreens/Create";
@@ -13,8 +13,8 @@ import Create from "../Sections/Ambassador/screens/DashboardScreens/Create";
 export default function AmbassadorRoutes() {
   return (
     <AmbassadorLayout>
-        <Navbar />
-        <AnimatedRoutes />
+      <Navbar />
+      <AnimatedRoutes />
     </AmbassadorLayout>
   );
 }
@@ -26,8 +26,8 @@ const AnimatedRoutes = () => {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        {/* Root path for /ambassador */}
-        <Route path="/" element={<Home />} />
+        {/* Change root path to "*" to correctly match all subroutes */}
+        <Route path="*" element={<Home />} />
 
         {/* Other relative paths */}
         <Route path="about" element={<About />} />
