@@ -14,14 +14,14 @@ const HomePage = () => {
     <div className="flex items-center justify-center text-center ">
       <div className="px-6 py-20  max-w-lg w-full">
         <h1 className="text-4xl font-semibold text-gray-700">Hello student!🥳</h1>
-        <p className="mt-4 text-lg text-gray-700">Log in or sign up to submit your boarding house information and earn upto  <span class="text-red-500 mx-1 font-extrabold text-4xl relative inline-block stroke-current">
-            k950.
+        <p className="mt-4 text-lg text-gray-700">Finding a good boarding house is hard we’ve been there. That’s why we’re building Instay, a platform to make it easier for students like   <span class="text-red-500 mx-1 font-extrabold text-4xl relative inline-block stroke-current">
+            You.
             <svg class="absolute -bottom-0.5 w-full max-h-1.5" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="none">
                 <path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" stroke-width="2"></path>
             </svg>
-        </span> </p>
-        <p className="border-l-4 border-red-200 mt-4 text-left text-lg text-gray-700 pl-2 italic ">Help us find <span className="bg-red-200 px-3 mx-1 italic font-bold">QUALITY</span> boarding houses and earn while doing that. </p>
+        </span> But we can’t do it alone!</p>
+        <p className="border-l-4 border-red-200 mt-4 text-left text-lg text-gray-700 pl-2 italic ">help us by submitting your boarding house details. Together, we can make finding a place less horrible for every student.  </p>
 
         {/* Login / Sign Up Buttons */}
         <div className="mt-6">
